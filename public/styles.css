@@ -1,0 +1,610 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #f7fafc;
+}
+
+/* Dashboard Layout */
+.financial-dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.dashboard-main {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Connection Status */
+.connect-btn {
+    background: #48bb78;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.connect-btn:hover {
+    background: #38a169;
+    transform: translateY(-1px);
+}
+
+.status {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.status.connecting {
+    background: #ffd89b;
+    color: #744210;
+}
+
+.status.connected {
+    background: #9ae6b4;
+    color: #1a202c;
+}
+
+.status.error {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+}
+
+.dashboard-sidebar {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Accounts Section */
+.accounts-section {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.accounts-section h2 {
+    padding: 1.5rem;
+    background: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.accounts-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.account-item:hover {
+    background: #f7fafc;
+}
+
+.account-item.selected {
+    background: #ebf8ff;
+    border-left: 4px solid #3182ce;
+}
+
+.account-item:last-child {
+    border-bottom: none;
+}
+
+.account-info {
+    flex: 1;
+}
+
+.account-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.account-type {
+    font-size: 0.875rem;
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.account-institution {
+    font-size: 0.75rem;
+    color: #a0aec0;
+}
+
+.account-balance {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: #2d3748;
+}
+
+/* Credit Cards Section */
+.credit-cards-section {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.credit-cards-section h2 {
+    padding: 1.5rem;
+    background: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.credit-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.credit-card-item {
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-type {
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.card-number {
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.balance-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.utilization {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.utilization-bar {
+    height: 0.5rem;
+    background: rgba(255,255,255,0.3);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.utilization-fill {
+    height: 100%;
+    background: #48bb78;
+    transition: width 0.3s;
+}
+
+.utilization-text {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.payment-warning {
+    background: #fed7d7;
+    color: #c53030;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Overview Section */
+.overview-section {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+}
+
+.overview-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.no-selection {
+    text-align: center;
+    color: #718096;
+    padding: 2rem;
+}
+
+/* Account Summary */
+.account-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.account-header {
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.account-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.account-title h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.account-type-badge {
+    background: #e2e8f0;
+    color: #4a5568;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.account-balance-large {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.account-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.875rem;
+    color: #718096;
+}
+
+.account-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background: #f7fafc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.stat-value.debit {
+    color: #e53e3e;
+}
+
+.stat-value.credit {
+    color: #38a169;
+}
+
+/* Recent Activity */
+.recent-activity h4 {
+    margin-bottom: 1rem;
+    color: #4a5568;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f7fafc;
+    border-radius: 0.5rem;
+}
+
+.activity-info {
+    flex: 1;
+}
+
+.activity-description {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.activity-category {
+    font-size: 0.75rem;
+    color: #718096;
+    margin-bottom: 0.25rem;
+}
+
+.activity-date {
+    font-size: 0.75rem;
+    color: #a0aec0;
+}
+
+.activity-amount {
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.activity-amount.debit {
+    color: #e53e3e;
+}
+
+.activity-amount.credit {
+    color: #38a169;
+}
+
+/* Transactions Section */
+.transactions-section {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+}
+
+.transactions-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.loading {
+    text-align: center;
+    color: #718096;
+    padding: 2rem;
+}
+
+.no-transactions {
+    text-align: center;
+    color: #718096;
+    padding: 2rem;
+}
+
+/* Transaction Table */
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.transactions-table th {
+    background: #f7fafc;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.transaction-row {
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.2s;
+}
+
+.transaction-row:hover {
+    background: #f7fafc;
+}
+
+.transactions-table td {
+    padding: 0.75rem;
+}
+
+.transaction-date {
+    color: #718096;
+    white-space: nowrap;
+}
+
+.primary-description {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.merchant-name {
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+.category-badge {
+    background: #e2e8f0;
+    color: #4a5568;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.transaction-amount.debit {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+.transaction-amount.credit {
+    color: #38a169;
+    font-weight: 600;
+}
+
+.status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.pending {
+    background: #faf089;
+    color: #744210;
+}
+
+.status-badge.completed {
+    background: #9ae6b4;
+    color: #1a365d;
+}
+
+/* Error Banner */
+.error-banner {
+    background: #fed7d7;
+    color: #c53030;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #feb2b2;
+}
+
+.error-banner button {
+    background: none;
+    border: none;
+    color: #c53030;
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-main {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+    }
+
+    .account-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .account-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .dashboard-main {
+        padding: 0.5rem;
+    }
+
+    .account-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .balance-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .transactions-table {
+        font-size: 0.75rem;
+    }
+
+    .transactions-table th,
+    .transactions-table td {
+        padding: 0.5rem;
+    }
+}
